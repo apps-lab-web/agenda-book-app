@@ -1,8 +1,9 @@
 {
-  "version": "a80fc88706c6c48c289374186751151928e57e6f0ad4ce82bbb7f1453b04858c",
-  "timestamp": "2026-05-26T17:54:56.464Z",
+  "version": "e2b2074798843f68e1ec0d26da1cea93e01addfd2573f853c3aeecf80b230144",
+  "timestamp": "2026-05-26T18:01:47.511Z",
   "files": {
     "chunk-2EFUMJI5.js": "a25a14227635672b6c87771c789e2b76fc648b209392074f4d63f58f5ddc566e",
+    "chunk-3CSBHT5N.js": "97418a76664a2f8e588992dff53541b638ccad695a0e5bb250fefdef5dada2c9",
     "chunk-3JYMBWKZ.js": "ca08c01b6323925682b09b29280cd8267b829b4bb9f9f4c29d121d0a171355c2",
     "chunk-4VUHHFVI.js": "d2b3b4542e94e6f9d1f6eadbf559b73fe61434813cb1be3d44f20265cc5e1af8",
     "chunk-52EFWBDA.js": "31a2eea661ce709040a7b17cf25fa30418f5942dbb3027f8555f590ec8e0073b",
@@ -32,7 +33,6 @@
     "chunk-LKDPKOJR.js": "0cf83355ede63856b536bf6af9a59b260e098c750670414f6dd24d39fe044132",
     "chunk-LQDSFJPF.js": "33b74fe5b0a24ee2258cec4522041e1b604045b5b85fc67f0e19defef83e7a5e",
     "chunk-MGXOH5EI.js": "3c60a9b5555fafae51b207a1eb421290f6c61c2d49b7e0b905b8b9648264fbd7",
-    "chunk-MHGILYSX.js": "c2498744334b426aae7fd13c92f2804cd0930e881aa3c4d7afd922c6dee96f88",
     "chunk-MMQNT6CD.js": "68c9b57c5473c1b79581455c76a9d51f070a03c1d8c3c3e38cf4f4390f52b360",
     "chunk-MPAYOOCV.js": "1653a885bd8016688887ccb27258bdfd137cf3e69305d6849cf1ad91206ffdee",
     "chunk-MW6K7DJ3.js": "6f5503ba18a1bf1353ad811e16da7507a70f6552c86a96801256e34dd16e7498",
@@ -67,20 +67,20 @@
     "chunk-ZTDVNQTU.js": "6a805a70c83d69aa3c76eb60a7a302294b889b31966e3fbe71433641bfe7be81",
     "dark-theme.css": "c66461757a5470764e496613653e14ca3f5550460a793f4834641bb983fdef1d",
     "favicon.ico": "f9102be80297c0529207607be5277b4f90bca89d65988fa1771b91c7894e815f",
-    "index.html": "5bbf39e7ad9882c6380c9da0fe805802ee27549791c52a4a4e74217ea3e43e74",
+    "index.html": "eb15085a74e128a47ee75214cac74bdc703a29d1860eb3ffdf3c05c3e2485d9c",
     "logo-dark-ia.png": "f23b8e1f9dc83cc18d19945bd057b6707b21ff17bf8921a817533fb70afa4f9e",
     "logo-dark.png": "972e7b41e44e373eb250e29c880f2e912c757ac118e814b423d49b90d96b7c30",
     "logo-dock.png": "eeb2508d1b619beeaa0417b8b32c489947a305e5e93b9862503578e615ff4f12",
     "logo-light copy.png": "5416e4796fe858867b78bc0eb23379540a85fc613e966b291948759cd0fca94c",
     "logo-light.png": "d83ccbabba42e4594d957f5d375a137621996c101f3c1f4723471552c4514a73",
-    "main-Z63YNCJR.js": "9739d3eb9014b4a78b9d95f800e317f62dc5bf4f055d0496d66c10737a0c6743",
+    "main-VXEOTWPE.js": "00235ea1541530b519190a1a29b79e9932acf58bc72a1bbd3627fe7e9c6d1cdc",
     "media/logo-dark-QMJDITHG.png": "972e7b41e44e373eb250e29c880f2e912c757ac118e814b423d49b90d96b7c30",
     "media/logo-light-ZPNYEYRQ.png": "d83ccbabba42e4594d957f5d375a137621996c101f3c1f4723471552c4514a73",
     "scrrenshots/dark/calendário.png": "eb94952a868e026965fb83b6daee4e103dc0e75f3d7d065faf7530a65ea1c061",
     "scrrenshots/dark/home.png": "5941dc532188f60f6c54c6fd4b5e1d008f3df7e49ed30d645bdb2a2b4ab03a4f",
     "scrrenshots/light/calendário.png": "25b43261434a030bd6ba5197efedd2716294e3a407b7bd20a497a6fd1ffd5615",
     "scrrenshots/light/home.png": "9b516fef15247bd62d998174f4061b5c4a0778869f774769b49c7131995a2a29",
-    "styles-A3D2RFA7.css": "f96e1552f4caee57ec7a8e79b543e032fbd8a1f2dd73ca8c1e8c8b0667cfea23",
+    "styles-MM6RDFQV.css": "194dca794be5be97239d0053d5a2f964d31a08b7fe62ffbb865740268af07e48",
     "worker-4NPFC7AQ.js": "65729ac563ee238c328f55593213b5f3e76f5c497edf993149c9a589a6fe7127"
   }
 }
