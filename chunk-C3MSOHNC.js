@@ -1,0 +1,1 @@
+import{a as n}from"./chunk-5T5VHP43.js";import{ga as i,ub as t}from"./chunk-XH7EQUCG.js";var c=class r{currencyService=i(n);transform(e){return this.currencyService.format(e)}static \u0275fac=function(a){return new(a||r)};static \u0275pipe=t({name:"currencyFormat",type:r,pure:!1})};export{c as a};
