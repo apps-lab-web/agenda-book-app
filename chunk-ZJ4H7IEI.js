@@ -1,1 +1,0 @@
-var e={production:!1,googleClientId:"19888086801-gmqitdc28gd5e7e6hr0443lltrug0goc.apps.googleusercontent.com",googleClientSecret:"",googleAuthRedirectUrl:"",backupEncryptionSecret:"",licenseApiKey:"pk_live_H4sxN4CM7C2c2WSBrhHGWKbboUsBtFaZt",licenseProductSlug:"agenda-book",licenseEntitlement:"agenda-book-pro",licenseApiBaseUrl:"/licenseseat-api/api/v1"};export{e as a};
