@@ -903,6 +903,40 @@
         display: block;
       }
 
+      /* ─── Language toggle ───────────────────────────────────────────────── */
+      .lang-toggle {
+        height: 38px;
+        padding: 0 10px;
+        border-radius: 100px;
+        border: 1px solid var(--border);
+        background: var(--surface-alt);
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        transition: background 0.2s;
+        flex-shrink: 0;
+      }
+      .lang-toggle:hover {
+        background: var(--surface-hover);
+      }
+      .lang-opt {
+        padding: 3px 8px;
+        border-radius: 100px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .lang-opt.active {
+        background: var(--grad);
+        color: #fff;
+      }
+
       /* ─── DARK MODE SHOWCASE ───────────────────────────────────────────── */
       .dark-showcase {
         padding: 120px 0;
@@ -1091,6 +1125,70 @@
         transition-delay: 0.3s;
       }
 
+      /* ─── FAQ ─────────────────────────────────────────────────────────── */
+      .faq-list {
+        max-width: 760px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .faq-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition: border-color 0.25s;
+      }
+      .faq-item:has(.faq-q[aria-expanded="true"]) {
+        border-color: rgba(124, 92, 252, 0.35);
+      }
+      .faq-q {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 22px 28px;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .faq-q:hover {
+        color: var(--accent2);
+      }
+      .faq-chevron {
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+        color: var(--muted);
+      }
+      .faq-q[aria-expanded="true"] .faq-chevron {
+        transform: rotate(180deg);
+        color: var(--accent2);
+      }
+      .faq-a {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease;
+      }
+      .faq-a.open {
+        grid-template-rows: 1fr;
+      }
+      .faq-a > p {
+        overflow: hidden;
+        min-height: 0;
+        padding: 0 28px 22px;
+        font-size: 0.925rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
       /* ─── RESPONSIVE ───────────────────────────────────────────────────── */
       @media (max-width: 1024px) {
         .bento {
@@ -1106,13 +1204,15 @@
           display: none;
         }
       }
-      @media (max-width: 768px) {
+      @media (max-width: 900px) {
         .nav-links {
           display: none;
         }
         .hamburger {
           display: flex;
         }
+      }
+      @media (max-width: 768px) {
         .hero-content {
           grid-template-columns: 1fr;
           gap: 40px;
@@ -1227,6 +1327,10 @@
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             </button>
+            <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Toggle language">
+              <span class="lang-opt active" id="lang-opt-pt">PT</span>
+              <span class="lang-opt" id="lang-opt-en">EN</span>
+            </button>
             <div class="hamburger" onclick="toggleMenu()">
               <span></span><span></span><span></span>
             </div>
@@ -1285,8 +1389,8 @@
             </div>
             <div class="hero-stats">
               <div class="stat">
-                <div class="stat-num">100%</div>
-                <div class="stat-label">Gratuito</div>
+                <div class="stat-num">Grátis</div>
+                <div class="stat-label">Até 5 clientes</div>
               </div>
               <div class="stat">
                 <div class="stat-num">Offline</div>
@@ -1652,7 +1756,7 @@
           <div class="step reveal">
             <div class="step-num">1</div>
             <h4>Baixe o App</h4>
-            <p>Instale o Agenda Book no seu MacOS ou Windows. Gratuito, sem limites.</p>
+            <p>Instale o Agenda Book no seu MacOS ou Windows. Gratuito para até 5 clientes.</p>
           </div>
           <div class="step reveal reveal-delay-1">
             <div class="step-num">2</div>
@@ -1893,11 +1997,10 @@
           <span class="badge" style="margin-bottom: 20px">Download Gratuito</span>
           <h2>Pronto para organizar<br /><span>sua agenda?</span></h2>
           <p>
-            Baixe agora gratuitamente. Sem assinatura, sem cadastro, sem nuvem obrigatória. Seus
-            dados ficam no seu computador.
+            Baixe agora gratuitamente. Gratuito para até 5 clientes — sem assinatura, sem cadastro, sem nuvem obrigatória. Seus dados ficam no seu computador.
           </p>
           <div class="cta-downloads">
-            <a href="#download" class="btn-download primary-dl">
+            <a href="https://download.mac.agendabook.app/" class="btn-download primary-dl" target="_blank" rel="noopener">
               <span class="icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -1911,7 +2014,7 @@
               </span>
             </a>
             <a
-              href="https://github.com/seu-usuario/agenda-book/releases"
+              href="https://download.win.agendabook.app/"
               class="btn-download"
               target="_blank"
               rel="noopener"
@@ -1928,6 +2031,93 @@
                 Windows
               </span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge">FAQ</span>
+          <h2>Perguntas <span>Frequentes</span></h2>
+          <p class="section-sub">
+            Tire suas dúvidas sobre o Agenda Book antes de baixar.
+          </p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              O Agenda Book é realmente gratuito?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Sim! O Agenda Book é gratuito para uso com até 5 clientes ativos. Para profissionais que atendem mais clientes, há planos pagos com funcionalidades expandidas.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Preciso de internet para usar o app?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Não. O Agenda Book funciona 100% offline. Todos os seus dados são armazenados localmente no seu computador, sem necessidade de conexão com a internet para o uso diário.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Em quais sistemas operacionais funciona?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>O Agenda Book está disponível para <strong>macOS</strong> (Apple Silicon e Intel) e <strong>Windows</strong> (64-bit). Versões para Linux estão em nosso roadmap.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Meus dados ficam seguros? Onde são armazenados?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Seus dados ficam exclusivamente no seu computador, em um banco de dados local. Nenhuma informação é enviada para servidores externos sem sua autorização. O app também oferece opção de backup para que você não perca seus dados.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Posso fazer backup dos meus dados?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Sim! O Agenda Book possui função de backup integrada, permitindo exportar e restaurar todos os seus dados com facilidade.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              O app usa serviços do Google. Para quê?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>A integração com o Google é totalmente <strong>opcional</strong> e permite três funcionalidades extras: sincronização de eventos com o <strong>Google Agenda</strong>, backup dos seus dados no <strong>Google Drive</strong> e criação de links do <strong>Google Meet</strong> diretamente nos agendamentos. Se preferir não usar, o app funciona normalmente de forma 100% offline sem nenhuma conta Google.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Quais permissões do Google o app solicita e como meus dados são usados?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Ao conectar sua conta Google, o Agenda Book solicita acesso a três escopos: <strong>Google Agenda</strong> (ler e criar eventos), <strong>Google Drive</strong> (salvar e restaurar apenas arquivos de backup criados pelo próprio app) e <strong>Google Meet</strong> (gerar links de reunião). Os arquivos de backup salvos no Google Drive são <strong>criptografados</strong> — nenhum dado pessoal é armazenado em texto legível na nuvem. Os eventos sincronizados com o Google Agenda ficam sob a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Política de Privacidade do Google</a> a partir do momento em que são transferidos. Nenhum dado é compartilhado com terceiros ou usado para fins de publicidade pelo Agenda Book. O uso dessas APIs também segue os <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Termos de Serviço do Google</a> e a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Política de Dados de Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Encontrei um bug. Como reportar?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Abra uma issue no nosso repositório GitHub: <a href="https://github.com/apps-lab-web/agenda-book-app/issues" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">github.com/apps-lab-web/agenda-book-app/issues</a>. Sua contribuição ajuda a melhorar o app para toda a comunidade.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1964,12 +2154,12 @@
             <ul>
               <li><a href="#how-it-works">Como Funciona</a></li>
               <li>
-                <a href="https://github.com/seu-usuario/agenda-book/issues" target="_blank"
+                <a href="https://github.com/apps-lab-web/agenda-book-app/issues" target="_blank"
                   >Reportar Bug</a
                 >
               </li>
               <li>
-                <a href="https://github.com/seu-usuario/agenda-book" target="_blank">GitHub</a>
+                <a href="https://github.com/apps-lab-web/agenda-book-app" target="_blank">GitHub</a>
               </li>
             </ul>
           </div>
@@ -1991,7 +2181,7 @@
           </p>
           <div class="footer-socials">
             <a
-              href="https://github.com/seu-usuario/agenda-book"
+              href="https://github.com/apps-lab-web/agenda-book-app"
               target="_blank"
               aria-label="GitHub"
             >
@@ -2160,6 +2350,347 @@
       }
       window.addEventListener('scroll', checkDarkTrigger, { passive: true });
       checkDarkTrigger();
+
+      // ── Internationalisation ────────────────────────────────────────────────────
+      let currentLang = localStorage.getItem('lang') || 'pt';
+
+      const i18n = {
+        pt: {
+          page_title: 'Agenda Book — Gestão de Agenda para Profissionais',
+          nav_features: 'Funcionalidades',
+          nav_how_it_works: 'Como Funciona',
+          nav_screenshots: 'Screenshots',
+          nav_testimonials: 'Depoimentos',
+          nav_download: 'Baixar Grátis',
+          hero_badge: 'App Desktop Gratuito',
+          hero_h1: 'Sua agenda, seus clientes,<br /><span>tudo em um lugar.</span>',
+          hero_desc: 'Agenda Book é o aplicativo desktop para profissionais liberais que precisam organizar atendimentos, acompanhar clientes e controlar recebimentos — sem complicação.',
+          hero_cta_primary: 'Baixar Agora',
+          hero_cta_secondary: 'Ver Screenshots',
+          hero_stat1_num: 'Grátis',
+          hero_stat1_label: 'Até 5 clientes',
+          hero_stat2_label: 'Sem internet necessária',
+          strip: ['Gestão de Clientes','Calendário Inteligente','Controle Financeiro','Planos de Pagamento','Eventos Recorrentes','Busca Rápida','Tema Escuro/Claro','Anexos'],
+          feat_badge: 'Funcionalidades',
+          feat_h2: 'Uma ferramenta simples<br /><span>para gerir seu negócio</span>',
+          feat_sub: 'Desenvolvido para terapeutas, coaches, personal trainers e qualquer profissional que atenda clientes de forma individual.',
+          feat_cards: [
+            { h3: 'Calendário de Atendimentos', p: 'Visualize seus agendamentos por dia, semana ou mês. Arraste e solte eventos para reagendar, defina cores por tipo de atendimento e configure recorrências automáticas.' },
+            { h3: 'Gestão de Clientes', p: 'Cadastre clientes com dados de contato, informações de cobrança e observações. Acesse o histórico completo de cada paciente ou aluno em segundos.' },
+            { h3: 'Controle de Recebimentos', p: 'Acompanhe o status de cada cobrança: Pendente, Fatura Emitida, Comprovante Recebido, Pago ou Atrasado. Tenha visão financeira completa do seu negócio.' },
+            { h3: 'Planos de Pagamento', p: 'Crie planos parcelados para seus clientes, defina o número de parcelas e valor, e acompanhe o progresso de cada plano — Ativo, Pausado ou Concluído.' },
+            { h3: 'Eventos Recorrentes', p: 'Configure atendimentos que se repetem semanalmente sem ter que criar manualmente. Edite uma ocorrência ou todas de uma vez com facilidade.' },
+            { h3: 'Anexos & Arquivos', p: 'Associe documentos, laudos e comprovantes diretamente a cada evento. Todo o histórico do atendimento em um só lugar, sempre acessível offline.' },
+          ],
+          how_badge: 'Como Funciona',
+          how_h2: 'Do download ao<br /><span>primeiro atendimento</span>',
+          how_sub: 'Comece em menos de 5 minutos. Sem cadastro, sem assinatura, sem internet.',
+          how_steps: [
+            { h4: 'Baixe o App', p: 'Instale o Agenda Book no seu MacOS ou Windows. Gratuito para até 5 clientes.' },
+            { h4: 'Cadastre seus Clientes', p: 'Adicione seus clientes com os dados necessários para atendimento e cobrança.' },
+            { h4: 'Agende os Atendimentos', p: 'Use o calendário para marcar sessões, definir cores e ativar recorrências.' },
+            { h4: 'Controle as Finanças', p: 'Registre cobranças, gerencie planos e acompanhe o fluxo de recebimentos.' },
+          ],
+          ss_badge: 'Screenshots',
+          ss_h2: 'Leveza e<br /><span>funcionalidade juntas</span>',
+          ss_sub: 'Interface moderna com suporte a tema escuro e claro. Seu app do jeito que você prefere.',
+          ss_labels: ['Início', 'Calendário'],
+          showcase_badge: 'Tema Escuro & Claro',
+          showcase_h2: 'Trabalhe no estilo<br /><span>que você prefere</span>',
+          showcase_sub: 'O Agenda Book foi desenhado do zero para suportar tema escuro e claro nativamente. Troque quando quiser — a interface é 100% otimizada para ambos os modos.',
+          showcase_feats: [
+            'Troca instantânea sem reiniciar o app',
+            'Segue automaticamente o tema do sistema',
+            'Cores calibradas para conforto visual noturno',
+            'Preferência salva entre sessões',
+          ],
+          pill_light: '☀️ Claro',
+          pill_dark: '🌙 Escuro',
+          test_badge: 'Depoimentos',
+          test_h2: 'Quem usa, <span>aprova</span>',
+          test_sub: 'Profissionais de diferentes áreas que transformaram sua gestão com o Agenda Book.',
+          test_items: [
+            { quote: '"Finalmente um app de agenda que reúne o calendário e o controle financeiro em um lugar só. Economizo pelo menos 30 minutos por dia na gestão dos meus atendimentos."', role: 'Psicóloga Clínica' },
+            { quote: '"O controle de planos de pagamento para meus alunos de musculação é incrível. Consigo ver de uma vez quem está em dia e quem está pendente, sem planilhas."', role: 'Personal Trainer' },
+            { quote: '"O tema escuro é lindo e funciona perfeitamente offline. Uso em sessões e nunca dependo de internet. Os eventos recorrentes me poupam muito tempo toda semana."', role: 'Coach Executiva' },
+          ],
+          dl_badge: 'Download Gratuito',
+          dl_h2: 'Pronto para organizar<br /><span>sua agenda?</span>',
+          dl_p: 'Baixe agora gratuitamente. Gratuito para até 5 clientes — sem assinatura, sem cadastro, sem nuvem obrigatória. Seus dados ficam no seu computador.',
+          dl_sub: 'Download para',
+          faq_badge: 'FAQ',
+          faq_h2: 'Perguntas <span>Frequentes</span>',
+          faq_sub: 'Tire suas dúvidas sobre o Agenda Book antes de baixar.',
+          faq_items: [
+            { q: 'O Agenda Book é realmente gratuito?', a: 'Sim! O Agenda Book é gratuito para uso com até 5 clientes ativos. Para profissionais que atendem mais clientes, há planos pagos com funcionalidades expandidas.' },
+            { q: 'Preciso de internet para usar o app?', a: 'Não. O Agenda Book funciona 100% offline. Todos os seus dados são armazenados localmente no seu computador, sem necessidade de conexão com a internet para o uso diário.' },
+            { q: 'Em quais sistemas operacionais funciona?', a: 'O Agenda Book está disponível para <strong>macOS</strong> (Apple Silicon e Intel) e <strong>Windows</strong> (64-bit). Versões para Linux estão em nosso roadmap.' },
+            { q: 'Meus dados ficam seguros? Onde são armazenados?', a: 'Seus dados ficam exclusivamente no seu computador, em um banco de dados local. Nenhuma informação é enviada para servidores externos sem sua autorização. O app também oferece opção de backup para que você não perca seus dados.' },
+            { q: 'Posso fazer backup dos meus dados?', a: 'Sim! O Agenda Book possui função de backup integrada, permitindo exportar e restaurar todos os seus dados com facilidade.' },
+            { q: 'O app usa serviços do Google. Para quê?', a: 'A integração com o Google é totalmente <strong>opcional</strong> e permite três funcionalidades extras: sincronização de eventos com o <strong>Google Agenda</strong>, backup dos seus dados no <strong>Google Drive</strong> e criação de links do <strong>Google Meet</strong> diretamente nos agendamentos. Se preferir não usar, o app funciona normalmente de forma 100% offline sem nenhuma conta Google.' },
+            { q: 'Quais permissões do Google o app solicita e como meus dados são usados?', a: 'Ao conectar sua conta Google, o Agenda Book solicita acesso a três escopos: <strong>Google Agenda</strong> (ler e criar eventos), <strong>Google Drive</strong> (salvar e restaurar apenas arquivos de backup criados pelo próprio app) e <strong>Google Meet</strong> (gerar links de reunião). Os arquivos de backup salvos no Google Drive são <strong>criptografados</strong> — nenhum dado pessoal é armazenado em texto legível na nuvem. Os eventos sincronizados com o Google Agenda ficam sob a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Política de Privacidade do Google</a> a partir do momento em que são transferidos. Nenhum dado é compartilhado com terceiros ou usado para fins de publicidade pelo Agenda Book. O uso dessas APIs também segue os <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Termos de Serviço do Google</a> e a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Política de Dados de Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.' },
+            { q: 'Encontrei um bug. Como reportar?', a: 'Abra uma issue no nosso repositório GitHub: <a href="https://github.com/apps-lab-web/agenda-book-app/issues" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">github.com/apps-lab-web/agenda-book-app/issues</a>. Sua contribuição ajuda a melhorar o app para toda a comunidade.' },
+          ],
+          footer_brand_p: 'App desktop gratuito para profissionais liberais organizarem sua agenda, clientes e finanças.',
+          footer_prod: 'Produto',
+          footer_support: 'Suporte',
+          footer_platforms: 'Plataformas',
+          footer_feat_link: 'Funcionalidades',
+          footer_how_link: 'Como Funciona',
+          footer_bug_link: 'Reportar Bug',
+        },
+        en: {
+          page_title: 'Agenda Book — Scheduling Management for Professionals',
+          nav_features: 'Features',
+          nav_how_it_works: 'How It Works',
+          nav_screenshots: 'Screenshots',
+          nav_testimonials: 'Testimonials',
+          nav_download: 'Free Download',
+          hero_badge: 'Free Desktop App',
+          hero_h1: 'Your schedule, your clients,<br /><span>all in one place.</span>',
+          hero_desc: 'Agenda Book is the desktop app for independent professionals who need to organise appointments, track clients, and manage receivables — without the hassle.',
+          hero_cta_primary: 'Download Now',
+          hero_cta_secondary: 'View Screenshots',
+          hero_stat1_num: 'Free',
+          hero_stat1_label: 'Up to 5 clients',
+          hero_stat2_label: 'No internet required',
+          strip: ['Client Management','Smart Calendar','Financial Control','Payment Plans','Recurring Events','Quick Search','Dark/Light Theme','Attachments'],
+          feat_badge: 'Features',
+          feat_h2: 'A simple tool<br /><span>to manage your business</span>',
+          feat_sub: 'Built for therapists, coaches, personal trainers, and any professional who sees clients individually.',
+          feat_cards: [
+            { h3: 'Appointment Calendar', p: 'View your bookings by day, week, or month. Drag and drop events to reschedule, set colours by appointment type, and configure automatic recurrences.' },
+            { h3: 'Client Management', p: 'Register clients with contact details, billing information, and notes. Access the full history of each patient or student in seconds.' },
+            { h3: 'Receivables Control', p: 'Track each billing status: Pending, Invoice Issued, Receipt Received, Paid, or Overdue. Get a complete financial overview of your business.' },
+            { h3: 'Payment Plans', p: "Create instalment plans for your clients, set the number of instalments and amount, and track each plan's progress — Active, Paused, or Completed." },
+            { h3: 'Recurring Events', p: 'Set up weekly recurring appointments without creating them manually. Edit one occurrence or all at once with ease.' },
+            { h3: 'Attachments & Files', p: 'Attach documents, reports, and receipts directly to each event. The entire appointment history in one place, always accessible offline.' },
+          ],
+          how_badge: 'How It Works',
+          how_h2: 'From download to<br /><span>your first appointment</span>',
+          how_sub: 'Get started in under 5 minutes. No sign-up, no subscription, no internet.',
+          how_steps: [
+            { h4: 'Download the App', p: 'Install Agenda Book on macOS or Windows. Free for up to 5 clients.' },
+            { h4: 'Add Your Clients', p: 'Add your clients with the details needed for appointments and billing.' },
+            { h4: 'Schedule Appointments', p: 'Use the calendar to book sessions, set colours, and activate recurring events.' },
+            { h4: 'Manage Finances', p: 'Log charges, manage plans, and track your receivables flow.' },
+          ],
+          ss_badge: 'Screenshots',
+          ss_h2: 'Simplicity and<br /><span>functionality together</span>',
+          ss_sub: 'Modern interface with dark and light theme support. Your app, the way you prefer.',
+          ss_labels: ['Home', 'Calendar'],
+          showcase_badge: 'Dark & Light Theme',
+          showcase_h2: 'Work in the style<br /><span>you prefer</span>',
+          showcase_sub: 'Agenda Book was designed from the ground up to natively support dark and light themes. Switch whenever you want — the interface is 100% optimised for both modes.',
+          showcase_feats: [
+            'Instant switch without restarting the app',
+            'Automatically follows the system theme',
+            'Colours calibrated for night-time visual comfort',
+            'Preference saved between sessions',
+          ],
+          pill_light: '☀️ Light',
+          pill_dark: '🌙 Dark',
+          test_badge: 'Testimonials',
+          test_h2: 'Those who use it, <span>love it</span>',
+          test_sub: 'Professionals from different fields who transformed their management with Agenda Book.',
+          test_items: [
+            { quote: '"Finally a scheduling app that brings the calendar and financial control together in one place. I save at least 30 minutes a day managing my appointments."', role: 'Clinical Psychologist' },
+            { quote: '"The payment plan management for my gym students is incredible. I can see at a glance who is up to date and who is pending, without spreadsheets."', role: 'Personal Trainer' },
+            { quote: '"The dark theme is beautiful and works perfectly offline. I use it in sessions and never depend on the internet. Recurring events save me a lot of time every week."', role: 'Executive Coach' },
+          ],
+          dl_badge: 'Free Download',
+          dl_h2: 'Ready to organise<br /><span>your schedule?</span>',
+          dl_p: 'Download now for free. Free for up to 5 clients — no subscription, no sign-up, no mandatory cloud. Your data stays on your computer.',
+          dl_sub: 'Download for',
+          faq_badge: 'FAQ',
+          faq_h2: 'Frequently Asked <span>Questions</span>',
+          faq_sub: 'Get your questions answered about Agenda Book before downloading.',
+          faq_items: [
+            { q: 'Is Agenda Book really free?', a: 'Yes! Agenda Book is free to use with up to 5 active clients. For professionals who see more clients, there are paid plans with expanded features.' },
+            { q: 'Do I need internet to use the app?', a: 'No. Agenda Book works 100% offline. All your data is stored locally on your computer, with no need for an internet connection for daily use.' },
+            { q: 'Which operating systems are supported?', a: 'Agenda Book is available for <strong>macOS</strong> (Apple Silicon and Intel) and <strong>Windows</strong> (64-bit). Linux versions are on our roadmap.' },
+            { q: 'Is my data safe? Where is it stored?', a: 'Your data stays exclusively on your computer, in a local database. No information is sent to external servers without your authorisation. The app also offers a backup option so you never lose your data.' },
+            { q: 'Can I back up my data?', a: 'Yes! Agenda Book has a built-in backup feature, allowing you to export and restore all your data with ease.' },
+            { q: 'The app uses Google services. What for?', a: 'Google integration is entirely <strong>optional</strong> and enables three extra features: event sync with <strong>Google Calendar</strong>, data backup to <strong>Google Drive</strong>, and <strong>Google Meet</strong> link creation directly in appointments. If you prefer not to use it, the app works normally 100% offline without any Google account.' },
+            { q: 'What Google permissions does the app request and how is my data used?', a: 'When you connect your Google account, Agenda Book requests access to three scopes: <strong>Google Calendar</strong> (read and create events), <strong>Google Drive</strong> (save and restore only backup files created by the app itself) and <strong>Google Meet</strong> (generate meeting links). Backup files saved to Google Drive are <strong>encrypted</strong> — no personal data is stored in readable form in the cloud. Events synced to Google Calendar fall under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Google Privacy Policy</a> from the moment they are transferred. No data is shared with third parties or used for advertising purposes by Agenda Book. Use of these APIs also complies with the <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Google Terms of Service</a> and the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">Google API Services User Data Policy</a>, including Limited Use requirements.' },
+            { q: 'I found a bug. How do I report it?', a: 'Open an issue in our GitHub repository: <a href="https://github.com/apps-lab-web/agenda-book-app/issues" target="_blank" rel="noopener" style="color: var(--accent2); font-weight: 600;">github.com/apps-lab-web/agenda-book-app/issues</a>. Your contribution helps improve the app for the entire community.' },
+          ],
+          footer_brand_p: 'Free desktop app for independent professionals to organise their schedule, clients, and finances.',
+          footer_prod: 'Product',
+          footer_support: 'Support',
+          footer_platforms: 'Platforms',
+          footer_feat_link: 'Features',
+          footer_how_link: 'How It Works',
+          footer_bug_link: 'Report Bug',
+        },
+      };
+
+      function getTextNode(el) {
+        return Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+      }
+
+      function applyLang(code) {
+        const t = i18n[code];
+        if (!t) return;
+        const q = (s) => document.querySelector(s);
+        const qa = (s) => [...document.querySelectorAll(s)];
+
+        document.title = t.page_title;
+
+        // Nav
+        q('.nav-links a[href="#features"]').textContent = t.nav_features;
+        q('.nav-links a[href="#how-it-works"]').textContent = t.nav_how_it_works;
+        q('.nav-links a[href="#screenshots"]').textContent = t.nav_screenshots;
+        q('.nav-links a[href="#depoimentos"]').textContent = t.nav_testimonials;
+        q('.nav-links a.btn-nav').textContent = t.nav_download;
+
+        // Hero
+        q('.hero-eyebrow .badge').textContent = t.hero_badge;
+        q('h1').innerHTML = t.hero_h1;
+        q('.hero-desc').textContent = t.hero_desc;
+        const tnPrimary = getTextNode(q('.btn-primary'));
+        if (tnPrimary) tnPrimary.textContent = ' ' + t.hero_cta_primary + ' ';
+        const tnSecondary = getTextNode(q('.btn-secondary'));
+        if (tnSecondary) tnSecondary.textContent = ' ' + t.hero_cta_secondary + ' ';
+        const statNums = qa('.hero-stats .stat-num');
+        const statLabels = qa('.hero-stats .stat-label');
+        if (statNums[0]) statNums[0].textContent = t.hero_stat1_num;
+        if (statLabels[0]) statLabels[0].textContent = t.hero_stat1_label;
+        if (statLabels[1]) statLabels[1].textContent = t.hero_stat2_label;
+
+        // Logo strip
+        qa('.strip-item').forEach((item, i) => {
+          const tn = getTextNode(item);
+          if (tn) tn.textContent = ' ' + t.strip[i % 8];
+        });
+
+        // Features
+        q('#features .badge').textContent = t.feat_badge;
+        q('#features h2').innerHTML = t.feat_h2;
+        q('#features .section-sub').textContent = t.feat_sub;
+        qa('#features .card').forEach((card, i) => {
+          if (!t.feat_cards[i]) return;
+          const h3 = card.querySelector('h3');
+          const p = card.querySelector('p');
+          if (h3) h3.textContent = t.feat_cards[i].h3;
+          if (p) p.textContent = t.feat_cards[i].p;
+        });
+
+        // How it works
+        q('#how-it-works .badge').textContent = t.how_badge;
+        q('#how-it-works h2').innerHTML = t.how_h2;
+        q('#how-it-works .section-sub').textContent = t.how_sub;
+        qa('#how-it-works .step').forEach((step, i) => {
+          const h4 = step.querySelector('h4');
+          const p = step.querySelector('p');
+          if (h4) h4.textContent = t.how_steps[i].h4;
+          if (p) p.textContent = t.how_steps[i].p;
+        });
+
+        // Screenshots
+        q('#screenshots .badge').textContent = t.ss_badge;
+        q('#screenshots h2').innerHTML = t.ss_h2;
+        q('#screenshots .section-sub').textContent = t.ss_sub;
+        qa('#screenshots .gallery-label').forEach((lbl, i) => {
+          const tn = getTextNode(lbl);
+          if (tn) tn.textContent = t.ss_labels[i];
+          else lbl.textContent = t.ss_labels[i];
+        });
+
+        // Dark mode showcase
+        q('#dark-mode-showcase .badge').textContent = t.showcase_badge;
+        q('#dark-mode-showcase h2').innerHTML = t.showcase_h2;
+        q('#dark-mode-showcase .section-sub').textContent = t.showcase_sub;
+        qa('#dark-mode-showcase .showcase-features li').forEach((li, i) => {
+          const tn = getTextNode(li);
+          if (tn) tn.textContent = ' ' + t.showcase_feats[i];
+        });
+        q('#pill-light').textContent = t.pill_light;
+        q('#pill-dark').textContent = t.pill_dark;
+
+        // Testimonials
+        q('#depoimentos .badge').textContent = t.test_badge;
+        q('#depoimentos h2').innerHTML = t.test_h2;
+        q('#depoimentos .section-sub').textContent = t.test_sub;
+        qa('#depoimentos .testimonial').forEach((tst, i) => {
+          const bq = tst.querySelector('blockquote');
+          const role = tst.querySelector('.role');
+          if (bq) bq.textContent = t.test_items[i].quote;
+          if (role) role.textContent = t.test_items[i].role;
+        });
+
+        // Download
+        q('#download .badge').textContent = t.dl_badge;
+        q('#download h2').innerHTML = t.dl_h2;
+        q('#download .cta-section > p').textContent = t.dl_p;
+        qa('#download .btn-download .sub').forEach((sub) => {
+          sub.textContent = t.dl_sub;
+        });
+
+        // FAQ
+        q('#faq .badge').textContent = t.faq_badge;
+        q('#faq h2').innerHTML = t.faq_h2;
+        q('#faq .section-sub').textContent = t.faq_sub;
+        qa('#faq .faq-item').forEach((item, i) => {
+          if (!t.faq_items[i]) return;
+          const btn = item.querySelector('.faq-q');
+          const ans = item.querySelector('.faq-a > p');
+          if (btn) {
+            const tn = getTextNode(btn);
+            if (tn) tn.textContent = ' ' + t.faq_items[i].q + ' ';
+          }
+          if (ans) ans.innerHTML = t.faq_items[i].a;
+        });
+
+        // Footer
+        q('.footer-brand p').textContent = t.footer_brand_p;
+        const footerSections = qa('.footer-links');
+        if (footerSections[0]) {
+          const h5 = footerSections[0].querySelector('h5');
+          if (h5) h5.textContent = t.footer_prod;
+          const links = footerSections[0].querySelectorAll('a');
+          if (links[0]) links[0].textContent = t.footer_feat_link;
+        }
+        if (footerSections[1]) {
+          const h5 = footerSections[1].querySelector('h5');
+          if (h5) h5.textContent = t.footer_support;
+          const links = footerSections[1].querySelectorAll('a');
+          if (links[0]) links[0].textContent = t.footer_how_link;
+          if (links[1]) links[1].textContent = t.footer_bug_link;
+        }
+        if (footerSections[2]) {
+          const h5 = footerSections[2].querySelector('h5');
+          if (h5) h5.textContent = t.footer_platforms;
+        }
+
+        // Toggle UI
+        document.getElementById('lang-opt-pt').classList.toggle('active', code === 'pt');
+        document.getElementById('lang-opt-en').classList.toggle('active', code === 'en');
+        localStorage.setItem('lang', code);
+        currentLang = code;
+      }
+
+      function toggleLang() {
+        applyLang(currentLang === 'pt' ? 'en' : 'pt');
+      }
+
+      // Apply saved language on load
+      if (currentLang !== 'pt') applyLang(currentLang);
+
+      // ── FAQ accordion ──────────────────────────────────────────────────────────
+      function toggleFaq(btn) {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach((other) => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            other.nextElementSibling.classList.remove('open');
+          }
+        });
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        answer.classList.toggle('open', !isOpen);
+      }
     </script>
   </body>
 </html>
