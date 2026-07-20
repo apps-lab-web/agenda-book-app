@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidade — Agenda Book</title>
+    <meta name="description" content="Política de Privacidade do Agenda Book. Saiba como seus dados são coletados, usados e protegidos." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --bg: #f5f5fa;
+        --surface: #ffffff;
+        --border: rgba(0,0,0,0.08);
+        --text: #1a1a2e;
+        --muted: #6b6b8a;
+        --accent: #7c5cfc;
+        --accent2: #6d48e5;
+        --radius: 6px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #09090f;
+          --surface: #12121c;
+          --border: rgba(255,255,255,0.07);
+          --text: #e8e8f0;
+          --muted: #7a7a9a;
+          --accent: #a78bfa;
+          --accent2: #a78bfa;
+        }
+      }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      header {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      header .logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      header .logo-wrap span {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      header .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #7c5cfc 0%, #06b6d4 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      main {
+        max-width: 800px;
+        margin: 48px auto;
+        padding: 0 24px 80px;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, #7c5cfc 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .meta {
+        font-size: 0.875rem;
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 28px 32px;
+        margin-bottom: 24px;
+      }
+      h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      h2 .icon { font-size: 1.2rem; }
+      p { margin-bottom: 12px; color: var(--text); font-size: 0.95rem; }
+      p:last-child { margin-bottom: 0; }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+      }
+      ul li {
+        padding: 6px 0 6px 20px;
+        position: relative;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+      ul li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .highlight {
+        background: rgba(124, 92, 252, 0.08);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        border-radius: 0 6px 6px 0;
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      footer {
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+      }
+      footer a { color: var(--accent); }
+
+      /* Language switcher */
+      .lang-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 32px;
+      }
+      .lang-tab {
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-family: inherit;
+        transition: all 0.15s;
+      }
+      .lang-tab.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .lang-content { display: none; }
+      .lang-content.active { display: block; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo-wrap">
+        <div class="logo-icon">📅</div>
+        <span>Agenda Book</span>
+      </a>
+    </header>
+
+    <main>
+      <h1>Política de Privacidade</h1>
+      <p class="meta">Última atualização: julho de 2025 &nbsp;·&nbsp; <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
+
+      <div class="lang-tabs">
+        <button class="lang-tab active" onclick="switchLang('pt-BR', this)">Português (BR)</button>
+        <button class="lang-tab" onclick="switchLang('pt-PT', this)">Português (PT)</button>
+        <button class="lang-tab" onclick="switchLang('en', this)">English</button>
+      </div>
+
+      <!-- ─── PT-BR ──────────────────────────────────────────────────────────── -->
+      <div id="lang-pt-BR" class="lang-content active">
+
+        <div class="card">
+          <h2><span class="icon">📋</span> Visão Geral</h2>
+          <p>
+            O <strong>Agenda Book</strong> é uma aplicação desktop desenvolvida por <strong>Anderson Araújo</strong>
+            para gestão de agenda, clientes e finanças por profissionais autônomos.
+            Esta política descreve quais dados são acessados, como são utilizados e como são protegidos.
+          </p>
+          <p>
+            O Agenda Book não possui servidores próprios. Todos os seus dados são armazenados
+            <strong>exclusivamente no seu dispositivo</strong>, exceto nos backups do Google Drive, que são
+            criptografados de ponta a ponta antes de serem enviados.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔗</span> Uso das APIs do Google</h2>
+          <p>
+            A integração com os serviços do Google é opcional e requer uma
+            <strong>licença válida</strong> do Agenda Book. Quando você conecta sua conta Google,
+            os seguintes escopos de acesso são solicitados:
+          </p>
+          <ul>
+            <li><strong>Google Calendar</strong> — leitura e escrita de eventos da agenda para sincronização bidirecional com o Google Agenda.</li>
+            <li><strong>Google Drive (drive.file)</strong> — criação e leitura de arquivos de backup gerados pelo próprio aplicativo, criptografados localmente antes do upload.</li>
+            <li><strong>Perfil e e-mail</strong> — identificação da conta conectada (nome, e-mail, foto).</li>
+            <li><strong>Google Meet (meetings.space.created)</strong> — criação de links de videoconferência associados a eventos (recurso opcional).</li>
+          </ul>
+          <div class="highlight">
+            O uso de dados obtidos via APIs do Google respeita integralmente a
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">
+              Política de Dados do Usuário dos Serviços de API do Google</a>,
+            incluindo os requisitos de Uso Limitado.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔒</span> Armazenamento e Segurança dos Dados</h2>
+          <ul>
+            <li>Todos os dados (clientes, eventos, notas, finanças) são armazenados em um banco de dados SQLite local no seu dispositivo.</li>
+            <li>Os backups enviados ao Google Drive são criptografados com AES-256 no dispositivo antes do upload — nem o Agenda Book nem o Google podem ler o conteúdo.</li>
+            <li>Tokens de acesso ao Google são armazenados localmente com criptografia e nunca são transmitidos a servidores do Agenda Book.</li>
+            <li>O aplicativo não coleta dados de telemetria, uso ou diagnóstico.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🚫</span> Dados que Não Coletamos</h2>
+          <ul>
+            <li>Não coletamos dados pessoais dos seus clientes.</li>
+            <li>Não enviamos dados de eventos, notas ou finanças para servidores externos.</li>
+            <li>Não compartilhamos dados com terceiros além do Google, e somente quando você autoriza explicitamente.</li>
+            <li>Não rastreamos comportamento de uso do aplicativo.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">↩️</span> Revogação de Acesso</h2>
+          <p>
+            Você pode desconectar sua conta Google a qualquer momento pelas configurações do aplicativo
+            (ícone do Google na barra lateral → <em>Sign out</em>). Você também pode revogar o acesso
+            diretamente na sua
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">conta Google</a>.
+          </p>
+          <p>
+            Após a revogação, nenhum dado adicional é enviado ao Google. Os dados já sincronizados
+            no Google Agenda ou no Google Drive permanecem sob controle da sua conta Google e podem
+            ser gerenciados diretamente nesses serviços.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">📬</span> Contato</h2>
+          <p>
+            Para dúvidas sobre privacidade ou solicitações de exclusão de dados, entre em contato com:
+          </p>
+          <p><strong>Anderson Araújo</strong> — <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
+          <p>
+            Política de Privacidade do Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+          </p>
+        </div>
+
+      </div><!-- /pt-BR -->
+
+      <!-- ─── PT-PT ──────────────────────────────────────────────────────────── -->
+      <div id="lang-pt-PT" class="lang-content">
+
+        <div class="card">
+          <h2><span class="icon">📋</span> Visão Geral</h2>
+          <p>
+            O <strong>Agenda Book</strong> é uma aplicação desktop desenvolvida por <strong>Anderson Araújo</strong>
+            para gestão de agenda, clientes e finanças por profissionais independentes.
+            Esta política descreve quais dados são acedidos, como são utilizados e como são protegidos.
+          </p>
+          <p>
+            O Agenda Book não possui servidores próprios. Todos os seus dados são armazenados
+            <strong>exclusivamente no seu dispositivo</strong>, exceto nos backups do Google Drive, que são
+            cifrados de ponta a ponta antes de serem enviados.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔗</span> Utilização das APIs do Google</h2>
+          <p>
+            A integração com os serviços do Google é opcional e requer uma
+            <strong>licença válida</strong> do Agenda Book. Quando liga a sua conta Google,
+            são solicitados os seguintes âmbitos de acesso:
+          </p>
+          <ul>
+            <li><strong>Google Calendar</strong> — leitura e escrita de eventos para sincronização bidirecional com o Google Agenda.</li>
+            <li><strong>Google Drive (drive.file)</strong> — criação e leitura de ficheiros de backup gerados pelo próprio aplicativo, cifrados localmente antes do envio.</li>
+            <li><strong>Perfil e e-mail</strong> — identificação da conta ligada (nome, e-mail, fotografia).</li>
+            <li><strong>Google Meet (meetings.space.created)</strong> — criação de ligações de videoconferência associadas a eventos (funcionalidade opcional).</li>
+          </ul>
+          <div class="highlight">
+            A utilização dos dados obtidos através das APIs do Google respeita integralmente a
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">
+              Política de Dados do Utilizador dos Serviços de API do Google</a>,
+            incluindo os requisitos de Utilização Limitada.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔒</span> Armazenamento e Segurança dos Dados</h2>
+          <ul>
+            <li>Todos os dados (clientes, eventos, notas, finanças) são armazenados numa base de dados SQLite local no seu dispositivo.</li>
+            <li>Os backups enviados ao Google Drive são cifrados com AES-256 no dispositivo antes do envio — nem o Agenda Book nem o Google podem ler o conteúdo.</li>
+            <li>Os tokens de acesso ao Google são armazenados localmente com cifração e nunca são transmitidos para servidores do Agenda Book.</li>
+            <li>A aplicação não recolhe dados de telemetria, utilização ou diagnóstico.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🚫</span> Dados que Não Recolhemos</h2>
+          <ul>
+            <li>Não recolhemos dados pessoais dos seus clientes.</li>
+            <li>Não enviamos dados de eventos, notas ou finanças para servidores externos.</li>
+            <li>Não partilhamos dados com terceiros além do Google, e apenas quando autoriza explicitamente.</li>
+            <li>Não rastreamos o comportamento de utilização da aplicação.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">↩️</span> Revogação de Acesso</h2>
+          <p>
+            Pode desligar a sua conta Google a qualquer momento nas definições da aplicação
+            (ícone do Google na barra lateral → <em>Sign out</em>). Pode também revogar o acesso
+            diretamente na sua
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">conta Google</a>.
+          </p>
+          <p>
+            Após a revogação, não são enviados dados adicionais ao Google. Os dados já sincronizados
+            no Google Agenda ou no Google Drive permanecem sob o controlo da sua conta Google e podem
+            ser geridos diretamente nesses serviços.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">📬</span> Contacto</h2>
+          <p>
+            Para questões sobre privacidade ou pedidos de eliminação de dados, contacte:
+          </p>
+          <p><strong>Anderson Araújo</strong> — <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
+          <p>
+            Política de Privacidade do Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+          </p>
+        </div>
+
+      </div><!-- /pt-PT -->
+
+      <!-- ─── EN ──────────────────────────────────────────────────────────────── -->
+      <div id="lang-en" class="lang-content">
+
+        <div class="card">
+          <h2><span class="icon">📋</span> Overview</h2>
+          <p>
+            <strong>Agenda Book</strong> is a desktop application developed by <strong>Anderson Araújo</strong>
+            for scheduling, client management, and financial tracking by independent professionals.
+            This policy describes what data is accessed, how it is used, and how it is protected.
+          </p>
+          <p>
+            Agenda Book has no servers of its own. All your data is stored
+            <strong>exclusively on your device</strong>, except for Google Drive backups, which are
+            end-to-end encrypted before being uploaded.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔗</span> Use of Google APIs</h2>
+          <p>
+            Google integration is optional and requires a <strong>valid Agenda Book license</strong>.
+            When you connect your Google account, the following access scopes are requested:
+          </p>
+          <ul>
+            <li><strong>Google Calendar</strong> — read and write access to calendar events for bidirectional sync with Google Calendar.</li>
+            <li><strong>Google Drive (drive.file)</strong> — creation and reading of backup files generated by the app, encrypted locally before upload.</li>
+            <li><strong>Profile and email</strong> — identification of the connected account (name, email, photo).</li>
+            <li><strong>Google Meet (meetings.space.created)</strong> — creation of video conference links associated with events (optional feature).</li>
+          </ul>
+          <div class="highlight">
+            Use of data obtained through Google APIs fully complies with the
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">
+              Google API Services User Data Policy</a>,
+            including the Limited Use requirements.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🔒</span> Data Storage and Security</h2>
+          <ul>
+            <li>All data (clients, events, notes, finances) is stored in a local SQLite database on your device.</li>
+            <li>Backups sent to Google Drive are encrypted with AES-256 on-device before upload — neither Agenda Book nor Google can read the content.</li>
+            <li>Google access tokens are stored locally with encryption and are never transmitted to Agenda Book servers.</li>
+            <li>The app does not collect telemetry, usage, or diagnostic data.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">🚫</span> Data We Do Not Collect</h2>
+          <ul>
+            <li>We do not collect personal data about your clients.</li>
+            <li>We do not send event, note, or financial data to external servers.</li>
+            <li>We do not share data with third parties other than Google, and only when you explicitly authorize it.</li>
+            <li>We do not track app usage behavior.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">↩️</span> Revoking Access</h2>
+          <p>
+            You can disconnect your Google account at any time in the app settings
+            (Google icon in the sidebar → <em>Sign out</em>). You can also revoke access
+            directly in your
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account</a>.
+          </p>
+          <p>
+            After revocation, no additional data is sent to Google. Data already synced
+            to Google Calendar or Google Drive remains under your Google account's control
+            and can be managed directly in those services.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2><span class="icon">📬</span> Contact</h2>
+          <p>
+            For privacy inquiries or data deletion requests, please contact:
+          </p>
+          <p><strong>Anderson Araújo</strong> — <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
+          <p>
+            Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+          </p>
+        </div>
+
+      </div><!-- /en -->
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Agenda Book · Anderson Araújo</p>
+      <p style="margin-top:6px">
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Limited Use Policy</a>
+      </p>
+    </footer>
+
+    <script>
+      function switchLang(lang, btn) {
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        btn.classList.add('active');
+      }
+      // Auto-detect browser language
+      (function() {
+        var lang = navigator.language || navigator.userLanguage || 'pt-BR';
+        if (lang.startsWith('pt-PT') || lang === 'pt') {
+          switchLang('pt-PT', document.querySelectorAll('.lang-tab')[1]);
+        } else if (lang.startsWith('en')) {
+          switchLang('en', document.querySelectorAll('.lang-tab')[2]);
+        }
+        // default stays pt-BR
+      })();
+    </script>
+  </body>
+</html>

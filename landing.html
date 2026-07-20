@@ -860,6 +860,16 @@
         font-size: 0.8rem;
         color: var(--muted);
       }
+      .footer-privacy-link {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-privacy-link:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
       .footer-socials {
         display: flex;
         gap: 16px;
@@ -2180,6 +2190,11 @@
             </script>
             Agenda Book
           </p>
+          <a
+            id="footer-privacy-link"
+            href="privacy-policy.html"
+            class="footer-privacy-link"
+          >Política de Privacidade</a>
           <div class="footer-socials">
             <a
               href="https://github.com/apps-lab-web/agenda-book-app"
@@ -2439,6 +2454,7 @@
           footer_feat_link: 'Funcionalidades',
           footer_how_link: 'Como Funciona',
           footer_bug_link: 'Reportar Bug',
+          footer_privacy: 'Política de Privacidade',
         },
         en: {
           page_title: 'Agenda Book — Scheduling Management for Professionals',
@@ -2523,6 +2539,7 @@
           footer_feat_link: 'Features',
           footer_how_link: 'How It Works',
           footer_bug_link: 'Report Bug',
+          footer_privacy: 'Privacy Policy',
         },
       };
 
@@ -2663,6 +2680,9 @@
           const h5 = footerSections[2].querySelector('h5');
           if (h5) h5.textContent = t.footer_platforms;
         }
+
+        const privacyLink = q('#footer-privacy-link');
+        if (privacyLink) privacyLink.textContent = t.footer_privacy;
 
         // Toggle UI
         document.getElementById('lang-opt-pt').classList.toggle('active', code === 'pt');
