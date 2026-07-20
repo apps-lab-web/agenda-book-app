@@ -1,6 +1,6 @@
 {
-  "version": "cf6ae93664aa0530d93f8e1d4592f0d333ed17a92349e379ec179752d2f4fe0a",
-  "timestamp": "2026-07-20T20:33:46.463Z",
+  "version": "54c4cd5c90cbac1059cbe639373b431253a18cd8f286713a64789dde65b865e9",
+  "timestamp": "2026-07-20T20:48:02.042Z",
   "files": {
     "chunk-2AO34JOQ.js": "554a4ecf54d8958bfdecc7e3d2cda744cff198e09204eeaa1c42e18dbb807121",
     "chunk-3AMMZTHC.js": "c3327fa320cbf2aff70c6537392f8ef5fcd91330ab473d625b34b66fc7310b9f",
@@ -78,7 +78,7 @@
     "main-UO7FJ7C3.js": "eb76ebb4f9a3730acf0e183cb3fd6b7fa1269d5ca8b54b06ba83f08fc30bbabc",
     "media/logo-dark-QMJDITHG.png": "972e7b41e44e373eb250e29c880f2e912c757ac118e814b423d49b90d96b7c30",
     "media/logo-light-ZPNYEYRQ.png": "d83ccbabba42e4594d957f5d375a137621996c101f3c1f4723471552c4514a73",
-    "privacy-policy.html": "68c457118691e4adde9e6ef4edcc58f48dce95c9f66c3b0735e7bfc55a375809",
+    "privacy-policy.html": "f448b98b4aa7145f5bc69c9e190e36b8ccc84f2e4c36fc761f59a237cc80be6b",
     "scrrenshots/dark/calendário.png": "eb94952a868e026965fb83b6daee4e103dc0e75f3d7d065faf7530a65ea1c061",
     "scrrenshots/dark/home.png": "5941dc532188f60f6c54c6fd4b5e1d008f3df7e49ed30d645bdb2a2b4ab03a4f",
     "scrrenshots/light/calendário.png": "25b43261434a030bd6ba5197efedd2716294e3a407b7bd20a497a6fd1ffd5615",

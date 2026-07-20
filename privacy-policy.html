@@ -62,12 +62,15 @@
       header .logo-icon {
         width: 32px;
         height: 32px;
-        background: linear-gradient(135deg, #7c5cfc 0%, #06b6d4 100%);
         border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      @media (prefers-color-scheme: light) {
+        .logo-icon { content: url('logo-light.png'); }
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-icon { content: url('logo-dark.png'); }
       }
       main {
         max-width: 800px;
@@ -175,14 +178,14 @@
   <body>
     <header>
       <a href="/" class="logo-wrap">
-        <div class="logo-icon">📅</div>
+        <img src="logo-dark.png" alt="Agenda Book" class="logo-icon" />
         <span>Agenda Book</span>
       </a>
     </header>
 
     <main>
       <h1>Política de Privacidade</h1>
-      <p class="meta">Última atualização: julho de 2025 &nbsp;·&nbsp; <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
+      <p class="meta">Última atualização: julho de 2026 &nbsp;·&nbsp; <a href="mailto:contato@agendabook.app">contato@agendabook.app</a></p>
 
       <div class="lang-tabs">
         <button class="lang-tab active" onclick="switchLang('pt-BR', this)">Português (BR)</button>
