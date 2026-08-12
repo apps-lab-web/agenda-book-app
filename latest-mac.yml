@@ -1,0 +1,8 @@
+version: 1.0.0-rc-1
+files:
+  - url: Agenda-Book-1.0.0-rc-1-arm64.dmg
+    sha512: 788Q4B9JRtK7WvbFO4TDswVnZE+xw4nBswp0uURCth/HsIr2RgDgxj0AUlWZ1xuShk/J6zAhQcSzLFLDpcWB5g==
+    size: 229672222
+path: Agenda-Book-1.0.0-rc-1-arm64.dmg
+sha512: 788Q4B9JRtK7WvbFO4TDswVnZE+xw4nBswp0uURCth/HsIr2RgDgxj0AUlWZ1xuShk/J6zAhQcSzLFLDpcWB5g==
+releaseDate: '2026-07-20T20:58:07.879Z'
