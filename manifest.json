@@ -1,6 +1,6 @@
 {
-  "version": "e61ea737c8f2429ae6a9ca5da4e7d671cabcf58548e75188140f500acded53ff",
-  "timestamp": "2026-09-09T13:14:10.490Z",
+  "version": "e24fbced214b569efd6a72141fbbba32dcc4c9f32123c1626e1a669e580303ee",
+  "timestamp": "2026-09-09T14:11:02.930Z",
   "files": {
     "chunk-2XM2XL6P.js": "628b024731f8dcfc9ecc7c321aa001a9fec6ba2d8ee095b1b4ceffec83ee48a8",
     "chunk-35CPWO76.js": "3a6bba0a113b9a61f6b406b1157d94225ef42825dfc7f1db996ac59443356284",
@@ -68,10 +68,10 @@
     "chunk-YXGUUU66.js": "f7863f64a16ccefe74b223e9c545172b894638e01d3a5996ca1b0e3663c4d24c",
     "chunk-ZRJLTUVW.js": "8a52df91c9385c87960e1fa509d56e033bc0c21b1543021566730fea06884f3e",
     "chunk-ZWBDHZTM.js": "e6c700190e04c8464f1b0a1ecc17978764ba5af28d09faaf8e4d6d73b4243d31",
-    "dark-theme.css": "0ad314443f286d7e7003b1355b76b42198d2ac14f22a718af3d66397c7949529",
+    "dark-theme.css": "09d360c33b74aba602eb3471fcad86fed8a375aa53ba6710e2d3e1cbd2e2e23d",
     "favicon.ico": "0a76f60ba5f41b26b3397d82981ecf117ebd87f2d6ffb558a90d546f4550f91c",
     "google-auth-callback.html": "d3174b2a25aa15cec040d4238ebf9d2862e7ffdad0b8cee415a57461493ff1c2",
-    "index.html": "7c5774d090e82e4d08ddbedab96ae1b6242884e426ffab0d0d9abbba0763010f",
+    "index.html": "122b0532768fd8a0242070415cecff00054d18fd46b6f5b1483b5a146f4bb976",
     "latest-mac.yml": "f1b61298f1867f7cd7ca15d236abd1b1deb9a7a05523bbc345ef034c37940c8f",
     "latest.yml": "c14c8dd46648307d51d28aa9b17b7072f01da4778530d36bb301f0bffbed07c5",
     "logo-dark-ia.png": "f23b8e1f9dc83cc18d19945bd057b6707b21ff17bf8921a817533fb70afa4f9e",
@@ -89,7 +89,7 @@
     "scrrenshots/dark/home.png": "5941dc532188f60f6c54c6fd4b5e1d008f3df7e49ed30d645bdb2a2b4ab03a4f",
     "scrrenshots/light/calendário.png": "25b43261434a030bd6ba5197efedd2716294e3a407b7bd20a497a6fd1ffd5615",
     "scrrenshots/light/home.png": "9b516fef15247bd62d998174f4061b5c4a0778869f774769b49c7131995a2a29",
-    "styles-TYBYOKRL.css": "02cd14afcd3bf399bac5d1e965419ca8cdb1f68fccb6107e2094f02a137bd46a",
+    "styles-XH6Z2TTP.css": "119a7dc6babc994d51cff8bd6b6b2a0a7dc896a95303c8983481ddd01910a5c8",
     "worker-4NPFC7AQ.js": "65729ac563ee238c328f55593213b5f3e76f5c497edf993149c9a589a6fe7127"
   }
 }
